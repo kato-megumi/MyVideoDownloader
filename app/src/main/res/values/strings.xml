@@ -2,7 +2,7 @@
     <string name="app_name">MyVideoDownloader</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_settings">Settings</string>
-
+    <string name="title_activity_download_video">DL_video</string>
     <!-- Strings related to Settings -->
 
     <!-- Example General settings -->

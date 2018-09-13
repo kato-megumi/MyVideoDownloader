@@ -68,7 +68,7 @@ public class Download extends AppCompatActivity {
                 for (int i = 0; i < list.callAttr("__len__").toJava(int.class); i++) {
                     PyObject down = list.callAttr("pop");
                     String ext = down.callAttr("get", "ext").toString();
-                    String format = down.callAttr("get", "format_note").toString();
+                    String format = down.callAttr("get", "format").toString();
                     String url = down.callAttr("get", "url").toString();
                     int filesize;
                     try {

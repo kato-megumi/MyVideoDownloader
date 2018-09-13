@@ -55,7 +55,7 @@ public class DownObjAdapter extends RecyclerView.Adapter<DownObjAdapter.ViewHold
     public void onBindViewHolder(DownObjAdapter.ViewHolder viewHolder, int position) {
         DownObj downObj = dos.get(position);
         String size;
-        viewHolder.codec.setText(downObj.format + "Type: " + downObj.ext);
+        viewHolder.codec.setText(downObj.format + "    Type: " + downObj.ext);
         if (downObj.filesize > 2000000){
             size = "Total size: " + Math.round(downObj.filesize/1048576.0*100)/100.0+" MB";
         } else if (downObj.filesize == 0){

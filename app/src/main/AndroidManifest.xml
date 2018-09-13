@@ -22,8 +22,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service
+            android:name=".DirectDl"
+            android:enabled="true"
+            android:exported="true" />
         <activity android:name=".Download" />
-        <activity android:name=".Setting"></activity>
+        <activity android:name=".Setting"/>
+        <activity
+            android:name=".DownloadVideoActivity"
+            android:label="@string/title_activity_download_video"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

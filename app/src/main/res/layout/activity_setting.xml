@@ -1,9 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Setting">
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/ffmpeg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:onClick="ffmpeg"
+        android:text="Install ffmpeg and enable convert" />
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btSelect"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:onClick="Select"
+            android:text="Pick folder ..." />
+        <TextView
+            android:id="@+id/tvStore"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp" />
+
+
+    </LinearLayout>
+</LinearLayout>

@@ -14,4 +14,31 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:id="@+id/wait">
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dual_ring"/>
+        <TextView
+            android:id="@+id/python"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="Wait for Python..."
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/wait_data"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:text="Fetch data ..."
+            android:textAlignment="center" />
+    </LinearLayout>
+
 </RelativeLayout>

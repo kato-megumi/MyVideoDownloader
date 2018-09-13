@@ -2,6 +2,7 @@ package com.komachi.myvideodownloader;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -14,8 +15,9 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity {
+import java.io.File;
 
+public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,10 +31,19 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {}
         });
 
-
         if (checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1337);
         }
+
+
+
+        SharedPreferences settings = getSharedPreferences("settings", 0);
+        String store = settings.getString("store","");
+        if (store.equals("")) {
+            File files[] = getExternalFilesDirs("");
+            store = files[files.length - 1].getAbsolutePath();
+        };
+        settings.edit().putString("store",store).apply();
 
     }
 

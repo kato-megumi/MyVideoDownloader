@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="20dp">
+
+    <CheckBox
+        android:id="@+id/cbConvert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Convert ???" />
+
+    <RadioGroup
+        android:id="@+id/rgVideo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_margin="10dp">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Convert to mp4"
+            android:id="@+id/rbMp4"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Convert to mkv"
+            android:id="@+id/rbMkv"/>
+    </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/cbSubtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="subtitle ???"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:orientation="vertical"
+        android:id="@+id/llSub">
+
+        <CheckBox
+            android:id="@+id/cbSubJA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ja" />
+
+        <CheckBox
+            android:id="@+id/cbSubEN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="en" />
+
+        <CheckBox
+            android:id="@+id/cbSubVI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="vi" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:background="#00ffffff"
+            android:id="@+id/btVideoCancel"
+            android:textColor="#505050"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ffffff"
+            android:text="OK"
+            android:id="@+id/btVideoOK"
+            android:textColor="#10f090"/>
+
+    </LinearLayout>
+</LinearLayout>

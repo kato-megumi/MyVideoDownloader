@@ -1,36 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Setting">
+    android:layout_margin="20dp">
 
-    <Button
-        android:id="@+id/ffmpeg"
+    <CheckBox
+        android:id="@+id/cbConvert3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:onClick="ffmpeg"
-        android:text="Install ffmpeg and enable convert" />
+        android:text="Do U want tp convert to mp3" />
+
 
     <LinearLayout
-        android:layout_margin="10dp"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <Button
-            android:id="@+id/btSelect"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="select"
-            android:text="Pick folder ..." />
-        <TextView
-            android:id="@+id/tvStore"
-            android:layout_width="fill_parent"
+            android:text="Cancel"
+            android:background="#00ffffff"
+            android:id="@+id/btAudioCancel"
+            android:textColor="#505050"/>
+        <Button
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="4dp" />
-
+            android:background="#00ffffff"
+            android:text="OK"
+            android:id="@+id/btAudioOK"
+            android:textColor="#10f090"/>
 
     </LinearLayout>
 </LinearLayout>

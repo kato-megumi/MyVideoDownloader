@@ -4,9 +4,8 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -25,16 +24,10 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {}
-        });
 
         if (checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1337);
         }
-
 
 
         SharedPreferences settings = getSharedPreferences("settings", 0);
@@ -42,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
         if (store.equals("")) {
             File files[] = getExternalFilesDirs("");
             store = files[files.length - 1].getAbsolutePath();
-        };
-        settings.edit().putString("store",store).apply();
+            settings.edit().putString("uri",Uri.fromFile(new File(store)).toString()).putString("store",store+"/").apply();
+        }
 
     }
 
@@ -74,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         TextInputEditText tv = findViewById(R.id.link);
         String link = tv.getText().toString();
         if (!link.equals("")){
-            Intent intent = new Intent(this, Download.class);
+            Intent intent = new Intent(this, DownloadActivity.class);
             intent.putExtra("link",link);
             startActivity(intent);
         }
